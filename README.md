@@ -1,5 +1,11 @@
 # Usage
 
+install with
+
+```
+npm install -g mcpwrapped
+```
+
 ```
 npx @modelcontextprotocol/inspector --config ./test.json
 ```
@@ -10,9 +16,8 @@ npx @modelcontextprotocol/inspector --config ./test.json
 {
   "mcpServers": {
     "wrapped": {
-      "command": "node",
+      "command": "mcpwrapped",
       "args": [
-        "<path-to-workspace>/mcpp/build/mcp-proxy.js",
         "python", # command
         "-m",
         "args", # args for mcp server
@@ -32,7 +37,7 @@ To pass a custom flag like `--visible_tools` to your wrapped command, add it to 
 
 ```json
 "args": [
-  "<path-to-workspace>/mcpp/build/mcp-proxy.js",
+  "<path-to-workspace>/mcpwrapped/build/mcp-proxy.js",
   "python",
   "-m",
   "args",

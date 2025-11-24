@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "build",
+    "outDir": "dist",
     "rootDir": "src",
     "module": "commonjs",
     "target": "es2017",

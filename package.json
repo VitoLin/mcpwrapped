@@ -1,15 +1,23 @@
 {
-  "name": "mcpp",
-  "version": "1.0.0",
+  "name": "mcpwrapped",
+  "version": "1.0.1",
   "description": "A small MCP Proxy",
-  "main": "index.js",
+  "main": "dist/mcpwrapped.js",
+  "bin": {
+    "mcpwrapped": "dist/mcpwrapped.js"
+  },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "format:all": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|jsx|tsx)\"",
     "format:check": "prettier --ignore-path .gitignore --check \"**/*.+(js|ts|jsx|tsx)\"",
-    "build": "npx tsc",
-    "inspector": "npx @modelcontextprotocol/inspector --config"
+    "build": "rm -rf dist && npx tsc",
+    "inspector": "npx @modelcontextprotocol/inspector --config",
+    "package": "npm run build && npm pack && npm i -g ./mcpwrapped-1.0.0.tgz",
+    "clean": "npm uninstall -g mcpwrapped"
   },
   "keywords": [],
   "author": "",

@@ -4,3 +4,4 @@
 node_modules/
 *-workspace/
 test*.json
+coverage/

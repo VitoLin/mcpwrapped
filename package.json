@@ -10,26 +10,30 @@
     "dist/"
   ],
   "scripts": {
-    "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
-    "format:all": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|jsx|tsx)\"",
-    "format:check": "prettier --ignore-path .gitignore --check \"**/*.+(js|ts|jsx|tsx)\"",
+    "lint": "eslint ./src --fix",
+    "format": "prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\\\ |g') --write --ignore-unknown",
     "build": "rm -rf dist && npx tsc",
     "postbuild": "chmod +x dist/mcpwrapped.js",
     "inspector": "npx @modelcontextprotocol/inspector --config",
     "package": "npm run build && npm pack && npm i -g ./mcpwrapped-1.0.0.tgz",
     "clean": "npm uninstall -g mcpwrapped",
-    "dev": "npm run build && npm run inspector"
+    "dev": "npm run build && npm run inspector",
+    "test": "npx jest tests/** --colors",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "eslint": "^9.39.1",
-    "prettier": "^3.6.2"
-  },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.5",
     "typescript": "^5.9.3"
   }
 }

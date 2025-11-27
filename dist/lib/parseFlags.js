@@ -7,7 +7,10 @@ function parseFlags(args, knownFlags) {
     const flags = Object.assign({}, knownFlags);
     const filteredArgs = args.filter((arg) => {
         if (arg.startsWith("--") && arg.includes("=")) {
-            const [flag, value] = arg.slice(2).split("=", 2);
+            const rest = arg.slice(2);
+            const idx = rest.indexOf("=");
+            const flag = rest.slice(0, idx);
+            const value = rest.slice(idx + 1);
             if (flag in flags) {
                 flags[flag] = value;
                 return false;

@@ -2,12 +2,15 @@
 // Returns an object: { flags, filteredArgs }
 export function parseFlags(
   args: string[],
-  knownFlags: Record<string, string>
+  knownFlags: Record<string, string>,
 ): { flags: Record<string, string>; filteredArgs: string[] } {
   const flags = { ...knownFlags };
   const filteredArgs = args.filter((arg) => {
     if (arg.startsWith("--") && arg.includes("=")) {
-      const [flag, value] = arg.slice(2).split("=", 2);
+      const rest = arg.slice(2);
+      const idx = rest.indexOf("=");
+      const flag = rest.slice(0, idx);
+      const value = rest.slice(idx + 1);
       if (flag in flags) {
         flags[flag] = value;
         return false;

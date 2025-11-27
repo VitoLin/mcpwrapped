@@ -1,0 +1,6 @@
+# .husky/pre-commit
+npm run format
+npm run lint
+npm run build
+npm test
+git update-index --again

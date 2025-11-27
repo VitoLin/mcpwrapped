@@ -5,7 +5,7 @@ export interface NdjsonRecord {
 
 export function parseNdjsonChunk(
   buffer: string,
-  chunk: Buffer | string
+  chunk: Buffer | string,
 ): { buffer: string; records: NdjsonRecord[] } {
   buffer += chunk.toString();
 

@@ -1,6 +1,8 @@
 # mcpwrapped
 
 ![coverage](https://github.com/VitoLin/mcpwrapped/blob/main/coverage/badges.svg)
+![npm](https://img.shields.io/npm/v/mcpwrapped?style=flat-square)
+![downloads](https://img.shields.io/npm/dt/mcpwrapped?style=flat-square)
 
 A lightweight MCP (Model Context Protocol) proxy that sits between an MCP client and server. It allows you to filter available tools, preventing context window clutter by only exposing the tools you explicitly want to use.
 

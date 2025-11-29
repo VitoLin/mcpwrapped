@@ -1,6 +1,6 @@
 {
   "name": "mcpwrapped",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A small MCP Proxy",
   "main": "dist/mcpwrapped.js",
   "bin": {

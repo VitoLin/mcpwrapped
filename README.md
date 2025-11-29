@@ -84,6 +84,6 @@ In this example, only the `read_file` tool from the filesystem server would be v
 
 ## Configuration Flags
 
-| Flag              | Description                                                                                                                                                   | Example                            |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| `--visible_tools` | Comma-separated list of tool names to expose. If omitted, all tools are hidden (or behavior depends on implementation, currently filters if flag is present). | `--visible_tools=read_file,search` |
+| Flag                                     | Description                                                                                                                                                   | Example                                                   |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| <code>&#8209;&#8209;visible_tools</code> | Comma-separated list of tool names to expose. If omitted, all tools are hidden (or behavior depends on implementation, currently filters if flag is present). | <code>&#8209;&#8209;visible_tools=read_file,search</code> |
